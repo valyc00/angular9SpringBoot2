@@ -23,7 +23,7 @@ import { authInterceptorProviders } from './helper/auth.interceptor';
 
 const providerscoll:any = [];
 
-const vers: any= "sim";
+const vers: any= "nosim";
 // const vers: any= 'development';
 console.log('version:'+vers);
 if(vers==='sim'){

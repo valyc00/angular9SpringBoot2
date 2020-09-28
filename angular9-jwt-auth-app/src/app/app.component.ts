@@ -1,6 +1,7 @@
 import { TokenStorageService } from './services/token-storage.service';
 import { Component, OnInit } from '@angular/core';
 import { NgxSecurityService } from 'ngx-security';
+import { LoaderService } from './services/spinner.service';
 
 
 @Component({
@@ -17,7 +18,8 @@ export class AppComponent implements OnInit{
   username: string;
 
   constructor(private tokenStorageService: TokenStorageService,
-    private security: NgxSecurityService
+    private security: NgxSecurityService,
+    public loaderService:LoaderService
     ) {
 
   }

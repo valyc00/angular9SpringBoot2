@@ -64,6 +64,61 @@ export class CommonsFakeService {
   }
 
 
+  getRubricaPag():any {
+   const body =
+   
+   {
+      "content":[
+         {
+            "id":4,
+            "nome":"val3",
+            "cognome":"cif3",
+            "numero":"12343"
+         },
+         {
+            "id":5,
+            "nome":"val4",
+            "cognome":"cif4",
+            "numero":"12344"
+         },
+         {
+            "id":6,
+            "nome":"val5",
+            "cognome":"cif5",
+            "numero":"12345"
+         }
+      ],
+      "pageable":{
+         "sort":{
+            "sorted":false,
+            "unsorted":true,
+            "empty":true
+         },
+         "offset":3,
+         "pageSize":3,
+         "pageNumber":1,
+         "paged":true,
+         "unpaged":false
+      },
+      "totalPages":34,
+      "totalElements":100,
+      "last":false,
+      "size":3,
+      "number":1,
+      "sort":{
+         "sorted":false,
+         "unsorted":true,
+         "empty":true
+      },
+      "first":false,
+      "numberOfElements":3,
+      "empty":false
+   }
+
+     return of(new HttpResponse({ status: 200, body}));
+ }
+
+
   ok():any {
     const body = {};
       return of(new HttpResponse({ status: 200, body}));

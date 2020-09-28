@@ -17,6 +17,8 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { HttpMockRequestInterceptor } from './interceptor.mock';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { LoaderService } from './services/spinner.service';
+import { SpinnerInterceptor } from './helper/spinner.interceptor';
 import { NgxSecurityModule } from 'ngx-security';
 
 
@@ -63,7 +65,11 @@ if(vers==='sim'){
     NgxSecurityModule,
     CommonModule 
   ],
-  providers: [authInterceptorProviders,providerscoll],
+  providers: [authInterceptorProviders,LoaderService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: SpinnerInterceptor,
+    multi: true
+  },providerscoll],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

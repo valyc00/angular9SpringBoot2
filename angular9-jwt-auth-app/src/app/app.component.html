@@ -323,3 +323,6 @@
   <section class="content">
     <router-outlet></router-outlet>
   </section>
+
+
+  <div class="loading" *ngIf="loaderService.isLoading | async"></div>

@@ -21,6 +21,10 @@ export class RubricaService {
   findAll(): Observable<any> {
     return this.http.get(API_URL + 'rubrica/rub', { responseType: 'json' });
   }
+ 
+  findAllPaged(page:Number,numPerPage: Number): Observable<any> {
+    return this.http.get(API_URL + 'rubrica/rub/page/?page='+page+'&numberPerPage='+numPerPage, { responseType: 'json' });
+  }
 
   
 

@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,7 +27,7 @@ import { RubricaComponent } from './rubrica/rubrica.component';
 const providerscoll:any = [];
 
 // const vers: any= "nosim";
-const vers: any= "sim";
+const vers: any= "nosim";
 // const vers: any= 'development';
 console.log('version:'+vers);
 if(vers==='sim'){
@@ -54,6 +55,7 @@ if(vers==='sim'){
     BoardUserComponent
   ],
   imports: [
+    NgbModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

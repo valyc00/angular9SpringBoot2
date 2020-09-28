@@ -30,6 +30,7 @@
                             
                         </tbody>
                     </table>
+                    <ngb-pagination [collectionSize]="totalItems" [pageSize]="itemsPerPage" [(page)]="page" [maxSize]="7" [rotate]="true" (pageChange)="loadPage($event)"></ngb-pagination>
                 </div>
 
             </div>

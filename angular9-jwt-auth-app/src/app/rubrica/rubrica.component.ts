@@ -9,19 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RubricaComponent implements OnInit {
   rubricas: any;
+  itemsPerPage: number;
+  totalItems: number;
+  page: number;
+  previousPage: number;
 
   constructor(private token: TokenStorageService,
     private rubricaService:RubricaService) { }
 
   ngOnInit(): void {
-   this.findAll();
+    this.page=1;
+    this.itemsPerPage=5;
+
+   this.findAllPage();
   }
   
+  loadPage(page: number) {
+    if (page !== this.previousPage) {
+      this.previousPage = page;
+      this.findAllPage();
+    }
+  }
   
   findAll(): void {
     this.rubricaService.findAll().subscribe(
       data => {
         this.rubricas = data;
+        
         console.log(this.rubricas)
       },
       err => {
@@ -31,6 +45,21 @@ export class RubricaComponent implements OnInit {
     console.log(this.rubricas);
   }
   
+
+  findAllPage(): void {
+    
+    this.rubricaService.findAllPaged(this.page - 1,this.itemsPerPage).subscribe(
+      data => {
+        this.rubricas = data.content;
+        this.totalItems = data.totalElements;
+        console.log(this.rubricas)
+      },
+      err => {
+        console.log("error");
+      }
+    );
+    console.log(this.rubricas);
+  }
   
 
 }

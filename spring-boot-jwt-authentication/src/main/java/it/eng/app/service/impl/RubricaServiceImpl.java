@@ -3,6 +3,8 @@ package it.eng.app.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +33,20 @@ public class RubricaServiceImpl implements IRubricaService  {
 		
 		return findAll;
 	}
+	
+	
+	@Override
+	public void save(Rubrica rubrica) {
+		rubricaRepository.save(rubrica);
+	}
+	
+	@Override
+	public Page<Rubrica> findAllPage(Pageable pageable) {
+		
+		Page<Rubrica> findAll = rubricaRepository.findAll(pageable);
+		return findAll;
+	}
+
 
 	
 }

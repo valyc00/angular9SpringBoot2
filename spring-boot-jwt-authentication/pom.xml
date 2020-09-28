@@ -11,7 +11,7 @@
 
 		<relativePath />
 	</parent>
-	<groupId>com.star.sud</groupId>
+	<groupId>it.eng.app</groupId>
 	<artifactId>spring-boot-jwt-authentication</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-boot-jwt-authentication</name>

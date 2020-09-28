@@ -15,15 +15,18 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardUserComponent } from './board-user/board-user.component';
 import { HttpMockRequestInterceptor } from './interceptor.mock';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 import { NgxSecurityModule } from 'ngx-security';
 
 
 import { authInterceptorProviders } from './helper/auth.interceptor';
+import { RubricaComponent } from './rubrica/rubrica.component';
 
 
 const providerscoll:any = [];
 
-const vers: any= "nosim";
+// const vers: any= "nosim";
+const vers: any= "sim";
 // const vers: any= 'development';
 console.log('version:'+vers);
 if(vers==='sim'){
@@ -45,6 +48,7 @@ if(vers==='sim'){
     RegisterComponent,
     HomeComponent,
     ProfileComponent,
+    RubricaComponent,
     BoardAdminComponent,
     BoardModeratorComponent,
     BoardUserComponent
@@ -54,7 +58,8 @@ if(vers==='sim'){
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxSecurityModule
+    NgxSecurityModule,
+    CommonModule 
   ],
   providers: [authInterceptorProviders,providerscoll],
   bootstrap: [AppComponent]

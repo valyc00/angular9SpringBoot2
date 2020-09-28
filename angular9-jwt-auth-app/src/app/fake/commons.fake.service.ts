@@ -12,35 +12,53 @@ export class CommonsFakeService {
   ) { }
 
 
-  getFatturazioneEtna():any {
+  getRubrica():any {
     const body =
-    {
-      "codiceReseller": 1,
-      "dataInserimento": "01/12/2020",
-      "nomeDestinatarioFattura": "Mario",
-      "cognomeDestinatarioFattura": "Bianchi",
-      "particellaToponomFattura": "01",
-      "viaFattura": "via Anselmi",
-      "numeroCivicoFattura": "61",
-      "scalaFattura": "A",
-      "internoFattura": "1",
-      "capFattura": "00100",
-      "frazioneFattura": "FR",
-      "comuneFattura": "ROMA",
-      "provinciaFattura": "ROMA",
-      "nomeRagsocialeDealer": "Eolo",
-      "partitaIvaDealer": "1234567",
-      "particellaToponomDealer ": "12",
-      "viaDealer": "via Roma",
-      "numeroCivicoDealer": "1",
-      "scalaDealer": "B",
-      "internoDealer": "1",
-      "capDealer": "00100",
-      "frazioneDealer": "FR",
-      "comuneDealer": "ROMA",
-      "provinciaDealer": "ROMA"
-    }
-
+    [
+      {
+         "id":1,
+         "nome":"val0",
+         "cognome":"cif0",
+         "numero":"12340"
+      },
+      {
+         "id":2,
+         "nome":"val1",
+         "cognome":"cif1",
+         "numero":"12341"
+      },
+      {
+         "id":3,
+         "nome":"val2",
+         "cognome":"cif2",
+         "numero":"12342"
+      },
+      {
+         "id":4,
+         "nome":"val3",
+         "cognome":"cif3",
+         "numero":"12343"
+      },
+      {
+         "id":5,
+         "nome":"val4",
+         "cognome":"cif4",
+         "numero":"12344"
+      },
+      {
+         "id":6,
+         "nome":"val5",
+         "cognome":"cif5",
+         "numero":"12345"
+      },
+      {
+         "id":7,
+         "nome":"val6",
+         "cognome":"cif6",
+         "numero":"12346"
+      }
+     
+   ]
 
       return of(new HttpResponse({ status: 200, body}));
   }

@@ -2,6 +2,9 @@ import { TokenStorageService } from './../services/token-storage.service';
 import { RubricaService } from './../services/rubrica.service';
 import { Component, OnInit } from '@angular/core';
 
+declare let $: any;
+declare let toastr: any;
+
 @Component({
   selector: 'app-rubrica',
   templateUrl: './rubrica.component.html',
@@ -14,6 +17,8 @@ export class RubricaComponent implements OnInit {
   page: number;
   previousPage: number;
 
+  
+
   constructor(private token: TokenStorageService,
     private rubricaService:RubricaService) { }
 
@@ -22,6 +27,16 @@ export class RubricaComponent implements OnInit {
     this.itemsPerPage=5;
 
    this.findAllPage();
+
+
+  }
+
+  
+  myFunc() {
+    console.log("myFunc");
+    const msg="ciaoooo";
+    // toastr.options.timeOut = 30000; 
+    toastr.success(msg);
   }
   
   loadPage(page: number) {

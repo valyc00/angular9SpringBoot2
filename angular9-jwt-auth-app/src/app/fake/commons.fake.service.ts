@@ -118,6 +118,24 @@ export class CommonsFakeService {
      return of(new HttpResponse({ status: 200, body}));
  }
 
+ getDatiGraf():any { 
+   const body =
+   {
+      "dati":[
+         "GEN",
+         "FEB",
+         "MAR"
+      ],
+      "valori":[
+         "10",
+         "12",
+         "40"
+      ]
+   }
+ 
+     return of(new HttpResponse({ status: 200, body}));
+ }
+
 
   ok():any {
     const body = {};

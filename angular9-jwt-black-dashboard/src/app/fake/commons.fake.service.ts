@@ -63,58 +63,75 @@ export class CommonsFakeService {
       return of(new HttpResponse({ status: 200, body}));
   }
 
-
   getRubricaPag():any {
    const body =
-   
-   {
-      "content":[
-         {
-            "id":4,
-            "nome":"val3",
-            "cognome":"cif3",
-            "numero":"12343"
-         },
-         {
-            "id":5,
-            "nome":"val4",
-            "cognome":"cif4",
-            "numero":"12344"
-         },
-         {
-            "id":6,
-            "nome":"val5",
-            "cognome":"cif5",
-            "numero":"12345"
-         }
-      ],
-      "pageable":{
-         "sort":{
-            "sorted":false,
-            "unsorted":true,
-            "empty":true
-         },
-         "offset":3,
-         "pageSize":3,
-         "pageNumber":1,
-         "paged":true,
-         "unpaged":false
-      },
-      "totalPages":34,
-      "totalElements":100,
-      "last":false,
-      "size":3,
-      "number":1,
-      "sort":{
-         "sorted":false,
-         "unsorted":true,
-         "empty":true
-      },
-      "first":false,
-      "numberOfElements":3,
-      "empty":false
-   }
+   [
+     {
+        "id":1,
+        "nome":"val0",
+        "cognome":"cif0",
+        "numero":"12340"
+     },
+     {
+        "id":2,
+        "nome":"val1",
+        "cognome":"cif1",
+        "numero":"12341"
+     },
+     {
+        "id":3,
+        "nome":"val2",
+        "cognome":"cif2",
+        "numero":"12342"
+     },
+     {
+        "id":4,
+        "nome":"val3",
+        "cognome":"cif3",
+        "numero":"12343"
+     },
+     {
+        "id":5,
+        "nome":"val4",
+        "cognome":"cif4",
+        "numero":"12344"
+     },
+     {
+        "id":6,
+        "nome":"val5",
+        "cognome":"cif5",
+        "numero":"12345"
+     },
+     {
+        "id":7,
+        "nome":"val6",
+        "cognome":"cif6",
+        "numero":"12346"
+     }
+    
+  ]
 
+     return of(new HttpResponse({ status: 200, body}));
+ }
+
+
+
+
+  getDatiGraf():any { 
+   const body =
+   {
+      "dati":[
+         "GEN",
+         "FEB",
+         "MAR"
+      ],
+      "valori":[
+         "10",
+         "12",
+         "40"
+      ]
+   }
+ 
      return of(new HttpResponse({ status: 200, body}));
  }
 

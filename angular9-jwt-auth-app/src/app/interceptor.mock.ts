@@ -41,6 +41,9 @@ export class HttpMockRequestInterceptor implements HttpInterceptor {
     else if (request.url.includes(this.resourceUrl + '/rubrica/rub') && request.method === 'GET') {
       return this.commonsFakeService.getRubrica().pipe(delay(500));
     }
+    else if (request.url.includes(this.resourceUrl + '/test/dati') && request.method === 'GET') {
+      return this.commonsFakeService.getDatiGraf().pipe(delay(500));
+    }
     
 
     else {

@@ -23,13 +23,14 @@ import { NgxSecurityModule } from 'ngx-security';
 
 
 import { authInterceptorProviders } from './helper/auth.interceptor';
+import { AuthExpiredInterceptor } from './helper/auth-expired.interceptor';
 import { RubricaComponent } from './rubrica/rubrica.component';
 
 
 const providerscoll:any = [];
 
 // const vers: any= "nosim";
-const vers: any= "sim";
+const vers: any= "nosim";
 // const vers: any= 'development';
 console.log('version:'+vers);
 if(vers==='sim'){
@@ -68,6 +69,10 @@ if(vers==='sim'){
   providers: [authInterceptorProviders,LoaderService, {
     provide: HTTP_INTERCEPTORS,
     useClass: SpinnerInterceptor,
+    multi: true
+  },{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthExpiredInterceptor,
     multi: true
   },providerscoll],
   bootstrap: [AppComponent]

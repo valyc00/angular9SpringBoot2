@@ -20,6 +20,7 @@ import { CommonModule } from '@angular/common';
 import { LoaderService } from './services/spinner.service';
 import { SpinnerInterceptor } from './helper/spinner.interceptor';
 import { NgxSecurityModule } from 'ngx-security';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 import { authInterceptorProviders } from './helper/auth.interceptor';
@@ -66,7 +67,9 @@ if(vers==='sim'){
     NgxSecurityModule,
     CommonModule 
   ],
-  providers: [authInterceptorProviders,LoaderService, {
+  providers: [authInterceptorProviders,
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
+    LoaderService, {
     provide: HTTP_INTERCEPTORS,
     useClass: SpinnerInterceptor,
     multi: true

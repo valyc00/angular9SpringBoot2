@@ -31,7 +31,7 @@ import { RubricaComponent } from './rubrica/rubrica.component';
 const providerscoll:any = [];
 
 // const vers: any= "nosim";
-const vers: any= "nosim";
+const vers: any= "sim";
 // const vers: any= 'development';
 console.log('version:'+vers);
 if(vers==='sim'){

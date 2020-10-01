@@ -2,6 +2,7 @@ import { TokenStorageService } from './../services/token-storage.service';
 import { RubricaService } from './../services/rubrica.service';
 import { TestService } from './../services/test.service';
 import { Component, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
 
 declare let $: any;
 declare let toastr: any;
@@ -99,6 +100,14 @@ export class RubricaComponent implements OnInit {
     );
     console.log(this.rubricas);
   } 
+
+
+  loopdati() {
+   //in 10 seconds do something
+    interval(3000).subscribe(x => {
+      this.getDatiPerGraf();
+    });
+  }
 
   creaGraf() {
 
